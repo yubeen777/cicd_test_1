@@ -1,0 +1,16 @@
+name: Github Action 실행하기
+
+
+#main브랜티에 push 이벤트가 발생했을 때 실행되는 workflow
+on:
+  push:
+    branches:
+      - main
+
+  jobs:
+    My-First-CICD-job:
+      runs-on: ubuntu-latest
+
+      steps:
+        -name: simple-web
+        run: echo "this is the first auto cicd step 1"
