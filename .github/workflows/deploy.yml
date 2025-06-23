@@ -23,7 +23,22 @@ jobs:
         run: |
           ls -al
           pwd
+
       - name: file 생성
         run: |
           echo "new file" > test.txt
           ls -al
+
+  My-Third-CICD-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Github 변수 확인
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+
+      - name: secret 변수 확인
+        run: |
+          echo ${{secrets.MY_KEY}}
+          echo ${{secrets.MY_SECRET_KEY}}
