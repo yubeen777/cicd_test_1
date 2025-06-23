@@ -14,3 +14,16 @@ jobs:
     steps:
       - name: simple-web
         run: echo "this is the first auto cicd step 1"
+
+  My-Second-CICD-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 디렉토리 확인
+        run: |
+          ls -al
+          pwd
+      - name: file 생성
+        run: |
+          echo "new file" > test.txt
+          ls -al
